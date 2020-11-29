@@ -5,27 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" ref="./style.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300&family=Rubik:wght@500&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="style.css" type="text/css">
 
     <title>Survey Form</title>
 </head>
 <body>
-    <h1 id="title" class="header">Always SURVEY in Philadelphia</h1>
-    <p id="sub-title" class="header">Answer these questions about your favorite Always Sunny characters!</p>
+    <h1 id="title" class="header">It's Always SURVEY in Philadelphia</h1>
+    <p id="description" class="header">Answer these questions about your favorite Always Sunny characters!</p>
 
     <form id="survey-form">
-        <label for="name" id="name-label" class="label">Name</label>
-        <input type="text" id="name" class="input" placeholder="Enter name here">
+        <div id="registration" class="formgroup">
+            <label for="email" id="email-label" class="label">Email</label>
+            <input name="email" type="email" id="email" class="input" placeholder="Enter your email" required>
+            
+            <label for="name" id="name-label" class="label">Name</label>
+            <input name="name" type="text" id="name" class="input" placeholder="Enter name here" required>
 
-        <label for="email" id="email-label" class="label">Email</label>
-        <input type="email" id="email" class="input" placeholder="Enter your email">
+            <label for="number" id="number-label" class="label">Age</label>
+            <input name="number" type="number" id="number" class="input" min="18" max="120" placeholder="Enter your age (digits only)">
+        </div>
 
-        <label for="age" id="number-label" class="label">Age</label>
-        <input type="number" id="age" class="input" min="18" max="120" placeholder="Enter your age">
+        <div id="survey-div" class="formgroup">
+            <div id="check-group">
+                <p class="label">How would you describe "Always Sunny" to a friend? <span>(Check all that apply)</span>:</p>
+                <div class="checkbox-div">
+                    <input type="checkbox" id="amazing" value="amazing" name="amazing">
+                    <label for="amazing" class="check-label">Downright amazing!</label>
+                </div>
 
+                <div class="checkbox-div">
+                    <input type="checkbox" id="triumph" value="triumph" name="triumph">
+                    <label for="triumph" class="check-label">A triumph of cinema!</label>
+                </div>
 
+                <div class="checkbox-div">
+                    <input type="checkbox" id="face-melting" value="face-melting" name="face-melting">
+                    <label for="face-melting" class="check-label">Face melting laughter!</label>
+                </div>
 
+                <div class="checkbox-div">
+                    <input type="checkbox" id="much" value="much" name="much">
+                    <label for="much" class="check-label">A bit much...</label>
+                </div>
+            </div>
+
+            <div id="fav-group">
+                <label for="fav" id="fav-label" class="label">Favorite Character</label>
+                <select id="dropdown" name="fav" class="input" placeholder="Who is your favorite Sunny character?">
+                    <option value="Dennis">Dennis</option>
+                    <option value="Mac">Mac</option>
+                    <option value="Charlie">Charlie</option>
+                    <option value="Sweet Dee">Sweet Dee</option>s
+                    <option value="Frank" selected>Frank</option>
+                </select>
+            </div>
+
+            <div id="radio-group">
+                <h3 id="radio-prompt" class="label">Pop-Quiz - What make of car does Dennis drive?</h3>
+                <div class="radio-div">
+                    <input type="radio" value="landrover" name="car" class="radio">
+                    <label for="landrover" class="radio-label">Land Rover</label>
+                </div>
+                <div class="radio-div">
+                    <input type="radio" value="honda" name="car" class="radio">
+                    <label for="honda" class="radio-label">Honda</label>
+                </div>
+                <div class="radio-div">
+                    <input type="radio" value="bmw" name="car" class="radio">
+                    <label for="bmw" class="radio-label">BMW</label>
+                </div>
+            </div>
+
+            <div id="text-group">
+                <label for="text">How has "Always Sunny" changed your life for the better?</label>
+                <textarea name="text" id="text" cols="20" rows="10">(e.g. "Sunny cured my lingering douchebaggery! Thanks!")</textarea>
+            </div>
+        </div>
+
+        <button type="submit" id="submit">Submit</button>
     </form>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript"></script>
 </body>
 </html>
